@@ -6,22 +6,13 @@ const {
     Intents,
     WebhookClient
 } = require("discord.js");
-const mongodb = require("mongodb");
 const {
     readdirSync
 } = require("fs");
 //TOP.GG CONSTRUCTORS!
-const {
-    AutoPoster
-} = require('topgg-autoposter');
-const Topgg = require("@top-gg/sdk");
-const express = require("express");
 const mysql = require('mysql2');
 const config = require("./botconfig/config.json");
 const schedule = require("node-schedule");
-const {
-    GiveawaysManager
-} = require('discord-giveaways');
 
 //           --------------------<CONSTRUCTORS>--------------------
 
