@@ -127,8 +127,12 @@ client.on("ready", async (client) => {
 
             collector.on('end', collected => {
                 let allmsgs = collected.map(message => `${message}`).join(`, `).toLowerCase();
-                if (collected.size === 0 && !allmsgs.includes(wordarray[r])) {
-                    findc.send({
+                if (collected.size === 0) {
+                    return findc.send({
+                        content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
+                    })
+                } else if (!allmsgs.includes(wordarray[r])) {
+                    return findc.send({
                         content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
                     })
                 }
@@ -200,8 +204,12 @@ client.on("ready", async (client) => {
 
             collector.on('end', collected => {
                 let allmsgs = collected.map(message => `${message}`).join(`, `).toLowerCase();
-                if (collected.size === 0 && !allmsgs.includes('sell')) {
-                    findc.send({
+                if (collected.size === 0) {
+                    return findc.send({
+                        content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
+                    })
+                } else if (!allmsgs.includes('sell')) {
+                    return findc.send({
                         content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
                     })
                 }
