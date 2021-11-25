@@ -69,7 +69,6 @@ client.on("ready", async (client) => {
                 "sugar",
                 "garlic",
                 "salami",
-                "ham",
                 "chicken"
             ];
 
@@ -128,7 +127,7 @@ client.on("ready", async (client) => {
 
             collector.on('end', collected => {
                 let allmsgs = collected.map(message => `${message}`).join(`, `).toLowerCase();
-                if (collected.size === 0 || !allmsgs.includes(wordarray[r])) {
+                if (collected.size === 0 && !allmsgs.includes(wordarray[r])) {
                     findc.send({
                         content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
                     })
@@ -201,7 +200,7 @@ client.on("ready", async (client) => {
 
             collector.on('end', collected => {
                 let allmsgs = collected.map(message => `${message}`).join(`, `).toLowerCase();
-                if (collected.size === 0 || !allmsgs.includes('sell')) {
+                if (collected.size === 0 && !allmsgs.includes('sell')) {
                     findc.send({
                         content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
                     })
