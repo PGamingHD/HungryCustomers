@@ -12,16 +12,11 @@ const schedule = require("node-schedule");
 const ms = require("ms");
 const ee = require("../botconfig/embed.json");
 const Discord = require("discord.js");
-const {
-    FindCursor
-} = require("mongodb");
 
 client.on("ready", async (client) => {
 
-    //HOST LOTTERY HERE!
-
     const job = schedule.scheduleJob('*/10 * * * *', async () => {
-        let findc = client.channels.cache.get('913379130987401226')
+        let findc = client.channels.cache.get('892069654753853460')
 
         if (findc) {
 
@@ -99,7 +94,7 @@ client.on("ready", async (client) => {
             }
             //SCRAMBLERS
 
-            findc.send({
+            await findc.send({
                 content: `${emoji.success} Someone left a tip containing **$${answer.toLocaleString('en-US')}**! Unscramble the word \`${scrambledword}\` to claim it!`
             });
 
@@ -143,7 +138,7 @@ client.on("ready", async (client) => {
     //LOTTERY ABOVE!
 
     const job2 = schedule.scheduleJob('*/15 * * * *', async () => {
-        let findc = client.channels.cache.get('913444398203805696')
+        let findc = client.channels.cache.get('892069654753853460')
 
         if (findc) {
 
@@ -164,19 +159,18 @@ client.on("ready", async (client) => {
                 return first + word.join("") + last;
             }
 
-
             let num = Math.floor(Math.random() * (35000 - 5000) + 5000);
             let percentage = Math.floor(Math.random() * (25 - 5) + 5);
             let answer = Math.round(num / 100) * 100;
             let tip = percentage / 100 * answer;
             let pizzas = Math.round(Math.random() * 1200 - 500) + 500;
 
-            findc.send({
+            await findc.send({
                 content: `${emoji.pizza} Hello, I am feeling very hungry this fine evening. May I please order \`${pizzas.toLocaleString('en-US')}\` Pizzas? \`Type 'sell' to sell the Pizzas to them!\``
             });
 
             collector = findc.createMessageCollector({
-                time: 60000
+                time: 5000
             })
 
             collector.on('collect', async (msg) => {
@@ -203,7 +197,9 @@ client.on("ready", async (client) => {
             });
 
             collector.on('end', collected => {
+                console.log("ended")
                 let allmsgs = collected.map(message => `${message}`).join(`, `).toLowerCase();
+                console.log(allmsgs)
                 if (collected.size === 0) {
                     return findc.send({
                         content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
