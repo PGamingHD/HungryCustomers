@@ -169,7 +169,7 @@ client.on("ready", async (client) => {
             let pizzas = Math.round(Math.random() * 1200 - 500) + 500;
 
             findc.send({
-                content: `${emoji.pizza} Hello, I am feeling very hungry this fine evening. May I please order \`${pizzas}\` Pizzas? \`Type 'sell' to sell the Pizzas to them!\``
+                content: `${emoji.pizza} Hello, I am feeling very hungry this fine evening. May I please order \`${pizzas.toLocaleString('en-US')}\` Pizzas? \`Type 'sell' to sell the Pizzas to them!\``
             });
 
             collector = findc.createMessageCollector({
@@ -187,7 +187,7 @@ client.on("ready", async (client) => {
                             UPDATE business SET businessProduced = businessProduced + ${pizzas} WHERE userId = '${msg.author.id}';`)
 
                             return findc.send({
-                                content: `${emoji.currency} Pleasure doing business with you, **${msg.author.tag}**! I believe I owe you \`$${answer}\` and then ontop of your awesome service here is a ${percentage}% tip of \`$${tip}\` for being epic!`
+                                content: `${emoji.currency} Pleasure doing business with you, **${msg.author.tag}**! I believe I owe you \`$${answer.toLocaleString('en-US')}\` and then ontop of your awesome service here is a ${percentage}% tip of \`$${tip.toLocaleString('en-US')}\` for being epic!`
                             })
 
                         } else {
