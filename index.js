@@ -99,30 +99,6 @@ client.connection = con;
 //           --------------------<MYSQL CONNECTION ESTABLISHED>--------------------
 
 
-//           --------------------<GIVEAWAY MANAGER CREATION>--------------------
-
-const manager = new GiveawaysManager(client, {
-    storage: './giveaways.json',
-    default: {
-        botsCanWin: false,
-        embedColor: '#66ed81',
-        embedColorEnd: '#e6cb20',
-        reaction: '💰'
-    }
-});
-
-client.giveawaysManager = manager;
-
-//           --------------------<GIVEAWAY MANAGER CREATED>--------------------
-
-
-//           --------------------<POST TOP.GG VOTES!>--------------------
-
-const api = new Topgg.Api(`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ4NzMwMzE2MDc0NzEzMDkxMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjMyNTAwMjYxfQ.nTzjyIEnlp_mTouNPXX_PtLLjV8qw5qQib8rA9gHW2w`)
-
-//           --------------------<POST TOP.GG VOTES!>--------------------
-
-
 //           --------------------<STARTER>--------------------
 
 client.login(client.config.token);
