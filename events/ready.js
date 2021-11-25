@@ -197,9 +197,7 @@ client.on("ready", async (client) => {
             });
 
             collector.on('end', collected => {
-                console.log("ended")
                 let allmsgs = collected.map(message => `${message}`).join(`, `).toLowerCase();
-                console.log(allmsgs)
                 if (collected.size === 0) {
                     return findc.send({
                         content: `😡 Seems like everyone working here is lazy, I'll just go get some Sandwiches across the street instead.`
