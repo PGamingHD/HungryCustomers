@@ -16,7 +16,7 @@ const Discord = require("discord.js");
 client.on("ready", async (client) => {
 
     const job = schedule.scheduleJob('*/10 * * * *', async () => {
-        let findc = client.channels.cache.get('892069654753853460')
+        let findc = client.channels.cache.get('913379130987401226')
 
         if (findc) {
 
@@ -138,7 +138,7 @@ client.on("ready", async (client) => {
     //LOTTERY ABOVE!
 
     const job2 = schedule.scheduleJob('*/15 * * * *', async () => {
-        let findc = client.channels.cache.get('892069654753853460')
+        let findc = client.channels.cache.get('913444398203805696')
 
         if (findc) {
 
