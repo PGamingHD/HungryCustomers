@@ -170,7 +170,7 @@ client.on("ready", async (client) => {
             });
 
             collector = findc.createMessageCollector({
-                time: 5000
+                time: 60000
             })
 
             collector.on('collect', async (msg) => {
