@@ -90,7 +90,7 @@ const con = mysql.createConnection({
 
 con.connect(err => {
     if (err) throw err;
-    console.log("Successfully connected to the MySQL Database as moderator!")
+    console.log("Successfully connected to the MySQL Database as Customer!")
     //con.query("SHOW TABLES", console.log)
 });
 
